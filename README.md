@@ -1,132 +1,63 @@
 # Python-Pandas-Projects-
 A collection of Python projects exploring data analysis with Pandas. Includes hands‑on exercises for loading, cleaning, grouping, and visualising datasets using Pandas, Matplotlib, and Seaborn. 
-# Project Overview & GitHub README Summary
+# Python Fundamentals & Data Analysis Project (Pandas)
 
-This repository contains the foundational Python and Data Analysis work completed as part of the **Data Technician Bootcamp**. The project demonstrates fundamental Python programming, data manipulation, file system integration in Google Colab, and introductory exploratory data analysis (EDA) using `pandas`.
+A collection of Python exercises and mini-projects completed as part of my **Data Technician Bootcamp**, covering core Python programming fundamentals through to real data analysis and visualisation using Pandas, all developed in **Google Colab**.
 
----
+## 🛠️ Tools & Libraries Used
+- 🐍 Python
+- 📘 Pandas
+- 🔢 NumPy
+- 📊 Matplotlib
+- 🎨 Seaborn
+- 📝 Jupyter Notebook / Google Colab
+- ☁️ Google Drive (for mounting and file storage)
 
-## 🔑 Key Skills & Concepts Highlighted
+## 🧰 Skills Demonstrated
 
-* **Data Wrangling & Analysis:** Creating and manipulating DataFrames, checking structures (`df.info()`, `df.describe()`, `df.shape`), and cleaning column entries.
+### Core Python Fundamentals
+- **Variables** – storing and referencing data such as names, ages, marks, and prices
+- **print() and input()** – displaying output and collecting user input
+- **Type casting** – converting user input to `int` or `float` to perform calculations (input is stored as text by default)
+- **Data types** – checking variable types using `type()`
+- **Arithmetic operators** – addition, subtraction, multiplication, division (`/`), floor division (`//`), modulus (`%`), and exponents (`**`)
+- **Shortcut/compound assignment operators** – `+=`, `-=`, `*=`, `/=`, `//=`, `%=` to update a variable's value in place
+- **Comparison operators** – `==`, `!=`, `>`, `<`, `>=`, `<=` to compare values and return Boolean results
+- **if / elif / else statements** – conditional logic to control program flow
+- **for loops and while loops** – repeating logic and iterating over ranges of values
+- **Debugging** – identifying and fixing syntax errors (mismatched quotes, missing brackets, typos in function names)
 
+### Setting Up a Data Analysis Environment (Google Colab)
+- Installing libraries not built into Colab using `!pip install`
+- Importing core libraries: `pandas`, `numpy`, `matplotlib.pyplot`, `seaborn`
+- Setting global display options (e.g. `pd.set_option`, `sns.set(style="whitegrid")`)
+- Mounting **Google Drive** to access and store files directly from a Colab notebook
+- Uploading dataset files (`files.upload()`) and saving copies back to Google Drive with `shutil.copy()`
+- Understanding Colab session/runtime behaviour (e.g. re-mounting Drive after a runtime restart)
 
-* **Environment Setup & Drive Integration:** Mount Google Drive within Google Colab runtimes and manage file paths (`shutil.copy`, `files.upload()`).
+### Working with DataFrames (Pandas)
+- Understanding what a DataFrame is – a table-like structure of rows and columns, where each column can hold a different data type
+- Creating DataFrames from dictionaries, lists of lists, or by reading directly from a CSV file with `pd.read_csv()`
+- Exploring a dataset with `.head()`, `.tail()`, `.info()`, `.describe()`, `.shape`, `.columns`, and `.dtypes`
+- Displaying all rows/columns without truncation using `pd.set_option()`
+- Finding unique values with `.unique()` and counting value frequency with `.value_counts()`
+- Sorting data with `.sort_values()` (ascending and descending)
+- Taking user input to dynamically control output (e.g. asking how many rows to display)
 
+### 📈 Basic Visualisation
+I used Matplotlib and Seaborn to create:
+- Bar charts
+- Histograms
+- Box plots
+- Scatter plots
 
-* **Python Foundations:** Dynamic variable declaration, data typing (`int`, `float`, `str`), and console inputs (`input()`).
+## 📓 Notebook
+The full code, outputs, and charts for this project are available here: [practice.ipynb](./practice.ipynb)
 
+Developed and tested in **Google Colab**, which allowed me to write and run Python code, install libraries, mount Google Drive, upload datasets, and visualise results directly in the browser without any local setup.
 
-* **Calculations & Logic:** Applying shortcut, arithmetic, and comparison operators to process dynamic data.
-
-
-* **Debugging & Code Quality:** Identifying and fixing syntax/runtime errors (string quoting, mismatched brackets, function call typos).
-
-
-
----
-
-## 📚 Libraries & Modules Used
-
-```python
-# Core Data Handling & Numerical Computing
-import pandas as pd           # DataFrame manipulation, CSV import/export[cite: 2]
-import numpy as np            # Numerical calculations and arrays[cite: 2]
-
-# Data Visualization
-import matplotlib.pyplot as plt # Base plotting and figure management[cite: 2]
-import seaborn as sns         # Statistical graphics and styled visualization[cite: 2]
-
-# System & Colab Utilities
-from google.colab import drive # Mount Google Drive to Colab VM[cite: 2]
-from google.colab import files # File uploader interface[cite: 2]
-import shutil                 # File system operations and file transfer[cite: 5]
-
-```
-
----
-
-## 📊 Variables & Data Dictionary
-
-Below is a reference guide to all variables initialized and tracked across the analysis workbooks:
-
-### Notebook Setup & File System Variables
-
-| Variable Name | Type / Source | Description |
-| --- | --- | --- |
-| `uploaded` | `dict` | Dictionary containing uploaded files via `files.upload()`.
-
- |
-| `full_path` | `str` | File path string pointing to the uploaded student dataset (`'/content/student.csv'`).
-
- |
-| `df` | `pandas.DataFrame` | Primary dataset loaded from `student.csv`.
-
- |
-| `sorted_df` | `pandas.DataFrame` | DataFrame sorted alphabetically by student name.
-
- |
-| `num_rows` | `int` | Dynamic user input specifying the number of rows to display via `df.head()`.
-
- |
-| `total_columns` | `int` | Integer count of total columns present in `df`.
-
- |
-
-### Python Foundations & Math Variables
-
-| Variable Name | Type | Description |
-| --- | --- | --- |
-| `student_name` | `str` | Stores student name string.
-
- |
-| `name`, `name1`, `name2` | `str` | String identifiers used for general string manipulations and prints.
-
- |
-| `age` | `int` | Age stored as an integer.
-
- |
-| `price`, `budget` | `float` / `int` | Numeric store for monetary values.
-
- |
-| `colour` | `str` | User input store for interactive text queries.
-
- |
-| `mark`, `mark1`, `mark2` | `int` / `float` | Grade marks used for scalar and DataFrame calculations.
-
- |
-| `total`, `average` | `float` | Aggregated calculated values for grades and totals.
-
- |
-| `max_mark`, `marks_below` | `int` | Boundary values used for comparative subtraction math.
-
- |
-| `double_mark` | `int` | Scaled calculation values (`mark * 2`).
-
- |
-| `num`, `num1`, `num2` | `int` / `float` | Generic arithmetic stores for operators and user inputs.
-
- |
-| `points`, `score`, `count` | `int` / `float` | Counters tracking shortcut updates (`+=`, `-=`, `*=`, `/=`).
-
- |
-| `length`, `speed`, `boxes` | `int` / `float` | Arithmetic variable tracking for division and integer division.
-
- |
-| `cookies`, `rem`, `value` | `int` | Integer counters for floor division (`//`) and remainder (`%`) logic.
-
- |
-| `a`, `b`, `x`, `y`, `n` | `int` / `float` | Comparative variables evaluated using logical operators (`==`, `!=`, `<`, `>`, `<=`, `>=`).
-
- |
+## 🎯 Purpose
+This project strengthened my understanding of core Python programming logic — variables, operators, conditionals, and loops — and showed how those fundamentals extend naturally into real data analysis workflows using Pandas, from setting up an environment and loading data through to exploring, sorting, and visualising it. These are essential foundational skills for a **Data Technician** role.
 
 ---
-
-## 📈 Charts & Visualization Setup
-
-While core data structures were prepared using Pandas, visual output generation is enabled using `matplotlib` and `seaborn`:
-
-* **Default Style:** `sns.set(style="whitegrid")` configured globally for visual styling.
-
-
-* **Display Controls:** `pd.set_option("display.max_rows", None)` configured to inspect full evaluation tables without truncation.
+*Part of my ongoing journey transitioning into a career in data and technology.*
